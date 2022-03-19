@@ -19,10 +19,10 @@ function Home({setShowJournalPage, setShowStretchesPage, setHomePage}) {
     <main>
       <div className="home-page">
         <h1 className= "wName">YESHAHAH</h1>
-        <div className="circle2" />
-        <div className="circle3" />
-        <button className="stretchesButton" onClick={handleOnStretchesPageClick}>Stretches</button>
+        <div className="home-page-btns">
+          <button className="stretchesButton" onClick={handleOnStretchesPageClick}>Stretches</button>
         <button className="journalButton" onClick={handleOnJournalPageClick}>Journal</button>
+        </div>
       </div>
     </main>
   );

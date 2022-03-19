@@ -1,123 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.stretches-page{
-  display: flex;
-}
-.timer-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #7C73AF;
-  width: 100%;
-}
-.timer-container{
-  margin-top: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.timer-container h3{
-  color:white;
-  font-size: 48px;
-  margin-bottom: 50px;
-}
-.timer{
-  width:250px;
-  height:250px;
-  background: white;
-  border-radius: 50%;
-  margin-bottom: 90px;
-}
-.music-selection{
-  display: flex;
-  justify-content: space-evenly;
-}
-.music-selection button{
-  height: 50px;
-  width: 50px;
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  height: 100vh;
-  background-color: rgb(255, 255, 255); /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.sidenav {
-  right: 0;
-}
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-.sidenav {
-  right: 0;
-}
-
-.openNavBtn{
-  background-color: aqua;
-  cursor: pointer;
-  background: green;
-  border: 1px solid black;
-  padding: 5px;
-}
-
-.main-stretch{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.main-stretch-circle{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: #7C73AF;
-}
-.stretch-buttons{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0px;
-  align-items: center;
-  justify-content: center;
-}
-.stretch-button{
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin: 10px;
-  background-color: #7C73AF;
-
-}
 
 /*----------------------------  */
 
@@ -125,9 +5,10 @@
 
 .home-page {
   position: relative;
-  background-color:hotpink;
   height: 100vh;
-  background-image: url("./components/imgs.strechingbg.svg");
+  background-image: url("./bgImage.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   
 }
 .wName {
@@ -139,22 +20,29 @@
 	line-height:143px;
 	color:#000;
 }
-
+.home-page-btns{
+  position: absolute;
+  right:150px;
+  bottom: 170px;
+}
 .journalButton {
   position: absolute;
-  bottom:100px;
-  right:0;
-	width:200px;
-	height:200px;
-	border-radius:50%;
+  bottom:30px;
+  right:150px;
+	min-width: 245px;
+  height: 126px;
+  border-radius: 20px;
+  border-style: none;
 	background:linear-gradient(180deg,#FFAFD7 0%,#FFB5A6 51.11%,#FFC331 100%);
 }
 .stretchesButton {
   position: absolute;
-  bottom:60px;
-  right:0;
-	width:200px;
-	height:200px;
-	border-radius:50%;
+  bottom:220px;
+  right:-20px;
+  width: 245px;
+  height: 126px;
+  border-radius: 20px;
+  border-style: none;
 	background:linear-gradient(159.67deg,#7C73AF 12.91%,#96F4F8 91.03%);
 }
+
