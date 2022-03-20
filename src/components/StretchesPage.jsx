@@ -9,10 +9,10 @@ const StretchesPage = ()=> {
   
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
-      return <span>00:00:00</span>;
+      return <span class="time-number">00:00:00</span>;
     } else {
       return (
-        <span>
+        <span class="time-number">
            {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
         </span>
       );
@@ -26,11 +26,6 @@ const StretchesPage = ()=> {
   }
   return (
     <div>
-      <input placeholder="time" type="number" min="1" max="200" onChange=  {handleOnTimeChange} value={time}></input> 
-      <button onClick={handleOnStartTime}>start</button>
-      <button onClick={()=>{setTime(0);}}>clear</button>
-
-      
       <div className="stretches-page">
         <div className="timer-section">
           <button className="openNavBtn" onClick={()=>{setIsNavOpen(true)}}>Click me</button>
@@ -39,23 +34,32 @@ const StretchesPage = ()=> {
             <div className="timer">
               <Countdown ref={countdownTimeRef} date={Date.now() + (time*60*1000)} autoStart={false} renderer={renderer} />
             </div>
+            <div id="start-clear-container">
+
+              <button id="start-button" onClick={()=>setStartTimer(true)}>start</button>
+              <input class="input-box" placeholder="time" type="number" min="1" max="200" onChange=  {handleOnTimeChange} value={time}></input>
+              <button id="clear-button" onClick={()=>{setTime(0);}}>clear</button>
+              
+            </div>
           </div>
           <div className="music-selection">
-            <button>rain</button>
-            <button>cafe</button>
-            <button>forest</button>
-            <button>cafe</button>
+            <img src="src/components/imgs/ambient/rain1.svg"></img>
+            <img src="src/components/imgs/ambient/coffee1.svg"></img>
+            <img src="src/components/imgs/ambient/forest1.svg"></img>
+            <img src="src/components/imgs/ambient/music1.svg"></img>
+          </div>
+          <div id="spacer">
           </div>
         </div>
   
-        <div id="mySidenav" className="sidenav" style={{width: isNavOpen? "550px": "0"}}>
+        <div id="mySidenav" className="sidenav" style={{width: isNavOpen? "750px": "0"}}>
           
           <a href="javascript:void(0)" className="closebtn" onClick={()=>{setIsNavOpen(false)}}
             >&times;</a>
 
-          <div id="sidebar-container">
-            <div>
-              <div className="main-stretch">
+          <div id="sidenav-container">
+            
+            <div className="main-stretch">
               <div className="main-stretch-circle"></div>
               <h3>neck stretches</h3>
               <ul>
@@ -66,14 +70,16 @@ const StretchesPage = ()=> {
             </div>
             
             <div className="stretch-buttons">
-              <button className="stretch-button">1</button>
-              <button className="stretch-button">1</button>
-              <button className="stretch-button">1</button>
-              <button className="stretch-button">1</button>
-              <button className="stretch-button">1</button>
-              <button className="stretch-button">1</button>
+              <button> </button>
+              <button> </button>
+              <button> </button>
+              <button> </button>
+              <button> </button>
+              <button> </button>
+              <button> </button>
+              <button> </button>
             </div>
-            </div>
+
           </div>
           
         </div>

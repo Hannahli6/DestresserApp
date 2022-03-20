@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Nunito;
+  src: url(Nunito-Regular.ttf);
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url(Nunito-Bold.ttf);
+  font-weight: bold;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +19,12 @@
 .timer-section{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background: #7C73AF;
   width: 100%;
 }
 .timer-container{
-  margin-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,19 +33,43 @@
   color:white;
   font-size: 48px;
   margin-bottom: 50px;
+  font-family: Nunito;
 }
 .timer{
-  width:250px;
-  height:250px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:300px;
+  height:300px;
   background: white;
   border-radius: 50%;
-  margin-bottom: 90px;
+	background:linear-gradient(180deg,#FFAFD7 0%,#FFB5A6 51.11%,#FFC331 100%);
 }
+
+.time-number{
+  font-family: Nunito;
+  font-weight: bold;
+  color: white;
+  font-size: 35px;
+}
+
+.input-box{
+  font-family: Nunito;
+  font-weight: bold;
+  height: 30px;
+  margin-top: 35px;
+}
+
+#spacer {
+  height: 30px;
+}
+
 .music-selection{
   display: flex;
   justify-content: space-evenly;
 }
-.music-selection button{
+.music-selection img{
   height: 50px;
   width: 50px;
   margin-left: 40px;
@@ -45,7 +80,7 @@
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   height: 100vh;
-  background-color: rgb(255, 255, 255); /* Black*/
+  background-color: #f7f6f7; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
@@ -63,11 +98,9 @@
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
+  position:relative;
+  top:-50px;
   font-size: 36px;
-  margin-left: 50px;
 }
 
 .sidenav {
@@ -90,11 +123,30 @@
   padding: 5px;
 }
 
+#MySidenav {
+  display:flex;
+}
+
+#sidenav-container {
+  width: 525px;
+}
+
 .main-stretch{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  font-family: Nunito;
+}
+
+.main-stretch h3{
+  font-size: 30px;
+  color: #434547;
+}
+
+.main-stretch ul{
+  font-size: 20px;
+  color: #434547;
 }
 
 .main-stretch-circle{
@@ -107,14 +159,40 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  align-items: center;
   justify-content: center;
 }
-.stretch-button{
+.stretch-buttons button{
   width: 90px;
   height: 90px;
   border-radius: 50%;
   margin: 10px;
   background-color: #7C73AF;
+}
 
+#start-clear-container{
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+
+#start-button{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+	background:linear-gradient(0deg,#7C73AF 20%,#96F4F8 120%);
+  font-family: Nunito;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+#clear-button{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+	background:linear-gradient(0deg,#7C73AF 20%,#96F4F8 120%);
+  font-family: Nunito;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
 }
