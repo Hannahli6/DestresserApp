@@ -136,6 +136,8 @@ border-radius:10px;
 
 .input-date-btn-container{
   margin-top: 15px;
+  display:flex; 
+  justify-content: space-evenly;
 
 }
 
