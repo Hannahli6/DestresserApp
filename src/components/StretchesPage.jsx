@@ -2,27 +2,47 @@ import React, { useState, useRef } from 'react';
 import Countdown, {zeroPad} from 'react-countdown';
 import '../stretchesPage.css';
 
+const STRETCHES = [
+  { name: "neck", img: "https://media1.popsugar-assets.com/files/thumbor/33LdRo69wFepJz0QOAvD8kIfWa0/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2013/08/20/763/n/1922729/26b27f299bae8fb2_basic/i/Seated-Neck-Release.jpg"}, 
+  { name: "body", img: "https://media.self.com/photos/58e65afe71db2552a4548468/master/pass/lauren-porat-yogaspark-knee-hold-pose.jpg"}]
+
+const renderer = ({ hours, minutes, seconds, completed }) => {
+  if (completed) {
+    return <span class="time-number">00:00:00</span>;
+  } else {
+    return (
+      <span class="time-number">
+         {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+      </span>
+    );
+  }
+};
+
+const CountdownWrapper = React.memo(({ countdownTimeRef, time }) => {
+  return <Countdown ref={countdownTimeRef} date={Date.now()+(time*60*1000)} autoStart={false} renderer={renderer} />
+})
+
 const StretchesPage = ()=> {
   const [time, setTime] = useState("");
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [stretchIndex, setStretchIndex] = useState(0)
+  const [isCounterRunning, setIsCounterRunning] = useState(false)
   const countdownTimeRef = useRef();
+  const currentStretch = STRETCHES[stretchIndex]
   
-  const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
-      return <span class="time-number">00:00:00</span>;
-    } else {
-      return (
-        <span class="time-number">
-           {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
-        </span>
-      );
-    }
-  };
+
   const handleOnTimeChange = (e)=>{
     setTime(e.target.value)
   }
   const handleOnStartTime = ()=>{
-    countdownTimeRef.current.api.start();
+    if (isCounterRunning) {
+      setIsCounterRunning(false)
+      countdownTimeRef.current.api.pause();
+    } else {
+      setIsCounterRunning(true)
+      countdownTimeRef.current.api.start();
+    }
+
   }
   return (
     <div>
@@ -32,12 +52,12 @@ const StretchesPage = ()=> {
           <div className="timer-container">
             <h3>Timer</h3>
             <div className="timer">
-              <Countdown ref={countdownTimeRef} date={Date.now() + (time*60*1000)} autoStart={false} renderer={renderer} />
+              <CountdownWrapper countdownTimeRef={countdownTimeRef} time={time}/>
             </div>
             <div id="start-clear-container">
 
-              <button id="start-button" onClick={()=>{handleOnStartTime(true); console.log('starttimer')}}>start</button>
-              <input class="input-box" placeholder="time" type="number" min="1" max="200" onChange=  {handleOnTimeChange} value={time}></input>
+              <button id="start-button" onClick={handleOnStartTime}>{isCounterRunning ? 'pause' : 'start'}</button>
+              <input class="input-box" placeholder="time" type="number" min="1" max="200" onChange={handleOnTimeChange} value={time}></input>
               <button id="clear-button" onClick={()=>{setTime(0);}}>clear</button>
               
             </div>
@@ -60,24 +80,13 @@ const StretchesPage = ()=> {
           <div id="sidenav-container">
             
             <div className="main-stretch">
-              <div className="main-stretch-circle"></div>
-              <h3>neck stretches</h3>
-              <ul>
-                <li>asd</li>
-                <li>asd</li>
-                <li>asd</li>
-              </ul>
+              <div className="main-stretch-circle"><img src={currentStretch.img} width="100%"/></div>
+              <h3>{currentStretch.name} stretches</h3>
             </div>
             
             <div className="stretch-buttons">
-              <button> </button>
-              <button> </button>
-              <button> </button>
-              <button> </button>
-              <button> </button>
-              <button> </button>
-              <button> </button>
-              <button> </button>
+              {STRETCHES.map(({ name, img }, index) => 
+                <button onClick={() => setStretchIndex(index)}><img src={img} width="100%"/><span>{name}</span></button>)}
             </div>
 
           </div>

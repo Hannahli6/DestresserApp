@@ -15,6 +15,7 @@
 }
 .stretches-page{
   display: flex;
+  width: 100vw;
 }
 .timer-section{
   display: flex;
@@ -154,6 +155,10 @@
   height: 200px;
   border-radius: 50%;
   background-color: #7C73AF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .stretch-buttons{
   display: flex;
@@ -167,6 +172,14 @@
   border-radius: 50%;
   margin: 10px;
   background-color: #7C73AF;
+  position: relative;
+}
+
+.stretch-buttons button span {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 #start-clear-container{

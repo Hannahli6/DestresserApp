@@ -4,6 +4,55 @@ body {
 background-color:#fab7a7;
 }
 
+.review {
+position:absolute;
+display:flex;
+background-color:#ffff;
+width:700px;
+height:1000px;
+top:290px;
+left:250px;
+}
+
+.wrapper {
+position:absolute;
+border:0 solid #ddd;
+overflow-y:auto;
+overflow-x:hidden;
+writing-mode:horizontal-tb;
+flex-direction:column;
+align-items:center;
+width:1000px;
+height:500px;
+right:240px;
+top:260px;
+}
+
+.wrapper .date {
+margin-left:45px;
+margin-bottom:30px;
+width:900px;
+height:120px;
+background:#fff0df;
+}
+
+::-webkit-scrollbar {
+width:10px;
+height:30px;
+}
+
+::-webkit-scrollbar-track {
+height:30px;
+border:0;
+border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb {
+height:30px;
+background:#7c73af;
+border-radius:10px;
+}
+
 .journal {
 background-color:#ffff;
 bottom:240px;
@@ -20,7 +69,7 @@ position:absolute;
 right:240px;
 text-transform:lowercase;
 width:930px;
-word-break: break-word;
+word-break:break-word;
 }
 
 .circle {
