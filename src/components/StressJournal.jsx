@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../sJournal.css';
 
-const StressJournal = ()=> {
+const StressJournal = ({setHomePage, setShowStretchesPage, setShowJournalPage})=> {
   const dateObj = new Date();
   let month = dateObj.getMonth() + 1;
   (month<10? month = `0` + month : null)
@@ -48,9 +48,16 @@ const StressJournal = ()=> {
     setJournalEntries(newJournalEntries);
   }
 
+  const handleOnHomePageClick = () => {
+    setHomePage(true);
+    setShowStretchesPage(false);
+    setShowJournalPage(false);
+  }
+
   return (
     <div className="journal-page">
       <div className="journal-page-content">
+        <img id="home-button" onClick={handleOnHomePageClick} src="/src/components/imgs/home-icon.svg"></img>      
         <div className="review">
             {journalEntries.map((journalEntry, index)=>{
             return (
@@ -64,28 +71,30 @@ const StressJournal = ()=> {
               </div>
             )
           })}
-           <button onClick={handleOnDeleteClick}>delete</button>
+          <button onClick={handleOnDeleteClick}>delete</button>
         </div>
         <div className="left-journal-section">
           <div className="journal-entries-container">
-          {journalEntries.map((journalEntry, index)=>{
-          return (
-            <button key={index} id={index} onClick={()=>setDisplayJournalIndex(index)}>{journalEntry.date}</button>
-          )
-          })}
+            {journalEntries.map((journalEntry, index)=>{
+            return (
+              <button key={index} id={index} onClick={()=>setDisplayJournalIndex(index)}>{journalEntry.date}</button>
+            )
+            })}
           </div>
           <div className="input-container">
-            <div className="journal" contentEditable="true" onChange={handleOnTextChange} value={text}><ul><li /></ul></div>
+            <textarea className="journal" onChange={handleOnTextChange} value={text}>
+            </textarea>
             <div className="input-date-btn-container">
-              <input type="date" onChange={handleOnDateChange}
-             value={selectedDate}
-             min="2022-3-10" max={todayDateStr} defaultValue={todayDateStr}/>
+            <input type="date" id="checkId" onChange={handleOnDateChange}
+            value={selectedDate}
+            min="2022-3-10" max={todayDateStr} defaultValue={todayDateStr}/>
               <button onClick={handleOnClick}>butttttttonnn</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
   )
 }
 export default StressJournal;

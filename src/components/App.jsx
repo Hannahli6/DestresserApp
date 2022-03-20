@@ -21,7 +21,10 @@ function App() {
           setHomePage = {setHomePage}
           /> : null}
         {showJournalPage? <StressJournal /> : null}
-        {showStretchesPage? <StretchesPage /> : null}
+        {showStretchesPage? <StretchesPage 
+          setShowJournalPage= {setShowJournalPage} 
+          setShowStretchesPage={setShowStretchesPage}
+          setHomePage = {setHomePage}/> : null}
       </div>
     </main>
   );

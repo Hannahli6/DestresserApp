@@ -26,8 +26,8 @@ body{
 	color:#FFF;
 }
 .circle1 {
-	width:183px;
-	height:183px;
+	width:143px;
+	height:143px;
 	position:fixed;
 	top:-4em;
 	left:-5em;
@@ -205,4 +205,29 @@ background-position: center top;
   font-size:10vmin;
   left:150px; 
   transition: ease all .5s;
+}
+
+.left-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 80vh;
+  margin-left:12vw;
+  top:10vh;
+}
+
+.left-container img{
+  width: 30vw;
+  margin-top: 7vh;
+}
+
+.left-container h1{
+  font-family:'Nunito';
+	font-style:normal;
+	font-weight:700;
+	font-size:10vh;
+	line-height:143px;
+	color:#FFF;
 }
