@@ -13,6 +13,11 @@
   margin: 0;
   padding: 0;
 }
+
+#home-button{
+  position:absolute;
+}
+
 .stretches-page{
   display: flex;
 }
@@ -21,8 +26,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #7C73AF;
+  background-color: #7C73AF;
   width: 100%;
+  background-image: url(/src/components/imgs/stretches-page-bg.svg);
+  background-size: cover;
 }
 .timer-container{
   display: flex;
@@ -61,7 +68,7 @@
   margin-top: 35px;
 }
 
-#spacer {
+.spacer {
   height: 30px;
 }
 
@@ -80,7 +87,7 @@
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   height: 100vh;
-  background-color: #f7f6f7; /* Black*/
+  background-color: #e6d0e8; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.7s; /* 0.5 second transition effect to slide in the sidenav */
@@ -116,11 +123,14 @@
 }
 
 .openNavBtn{
-  background-color: aqua;
+  position: absolute;
+  margin-left: 80vw;
+  margin-top: 3vh;
   cursor: pointer;
-  background: green;
-  border: 1px solid black;
-  padding: 5px;
+  font-family: Nunito;
+  font-weight: bold;
+  color: #e6d0e8;
+  font-size: 30px;
 }
 
 #MySidenav {

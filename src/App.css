@@ -9,8 +9,7 @@ body{
 }
 .home-page {
   height:100vh;
-	background:url(imgs/Back.png);
-	background-repeat:no-repeat;
+	background:url(/src/components/imgs/home-bg.svg);
 	background-size:cover;
 }
 .wName {
@@ -46,8 +45,11 @@ body{
 	background:linear-gradient(145.16deg,#FFA4D8 14.36%,#F5AAD4 122.31%);
 }
 .journalButton {
-	position:fixed;
-	left:75%;
+  position: fixed;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 	top:22vh;
 	width:650px;
 	height:650px;
@@ -58,12 +60,9 @@ body{
 	font-family:'Nunito';
 	font-style:normal;
 	font-weight:600;
-	font-size:80px;
-	line-height:109px;
+	font-size:4vmin;
+	line-height:50px;
 	color:#FFF;
-	position:absolute;
-	left:200px;
-	top:200px;
 }
 button {
 	border:none;
@@ -73,10 +72,13 @@ button {
 	padding:0;
 }
 .stretchesButton {
-	position:fixed;
+  position: fixed;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 	width:530px;
 	height:530px;
-	left:65%;
 	top:62vh;
 	border-radius:600px;
 	background:linear-gradient(159.67deg,#7C73AF 12.91%,#96F4F8 91.03%);
@@ -85,12 +87,9 @@ button {
 	font-family:'Nunito';
 	font-style:normal;
 	font-weight:600;
-	font-size:70px;
-	line-height:95px;
+	font-size:4vmin;
+	line-height:6vmin;
 	color:#FFF;
-	position:absolute;
-	left:120px;
-	top:150px;
 }
 .circle3 {
 	position:fixed;
@@ -109,6 +108,8 @@ button {
 .stretchesButton:hover{
   background:linear-gradient(159.67deg,#96F4F8 12.91%,#7C73AF 91.03%);
 }
+
+/*
 @media screen and (max-width: 2500px) {
 	body {
 	background-repeat:no-repeat;
@@ -170,4 +171,38 @@ button {
 		left:200px; 
 		transition: ease all .5s;
 	}
+}
+*/
+
+body {
+background-repeat:cover;
+background-size:auto;
+background-position: center top;
+}
+.stretchesButton {
+  width:25vmin;
+  height:25vmin;
+  right:25vw;
+	top:62vh;
+  transition: ease all .5s;
+
+  min-width: 150px;
+  min-height: 150px;
+}
+
+.journalButton {
+  width:35vmin;
+  height:35vmin;
+  right:5vw;
+	top:26vh;
+  transition: ease all .5s;
+
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.wName {
+  font-size:10vmin;
+  left:150px; 
+  transition: ease all .5s;
 }

@@ -35,7 +35,10 @@ const StretchesPage = ()=> {
   const countdownTimeRef = useRef();
   const currentStretch = STRETCHES[stretchIndex]
   
-
+  const playAudio = (url) => {
+    console.log("play audio");
+    new Audio(url).play();
+  }
   const handleOnTimeChange = (e)=>{
     setTime(e.target.value)
   }
@@ -51,9 +54,11 @@ const StretchesPage = ()=> {
   }
   return (
     <div>
+      <button id="home-button">Home</button>
       <div className="stretches-page">
+        <button className="openNavBtn" onClick={()=>{setIsNavOpen(true)}}>Click for Stretches</button>
         <div className="timer-section">
-          <button className="openNavBtn" onClick={()=>{setIsNavOpen(true)}}>Click me</button>
+          <div className="spacer"></div>
           <div className="timer-container">
             <h3>Timer</h3>
             <div className="timer">
@@ -68,7 +73,7 @@ const StretchesPage = ()=> {
             </div>
           </div>
           <div className="music-selection">
-            <img src="src/components/imgs/ambient/rain1.svg"></img>
+            <img src="src/components/imgs/ambient/rain1.svg" onClick={playAudio("src/components/ambients/forest.mp4")}></img>
             <img src="src/components/imgs/ambient/coffee1.svg"></img>
             <img src="src/components/imgs/ambient/forest1.svg"></img>
             <img src="src/components/imgs/ambient/music1.svg"></img>

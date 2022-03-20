@@ -12,7 +12,16 @@ const StressJournal = ()=> {
   
   const [text, setText] = useState("");
   const [journalEntry, setJournalEntry] = useState({});
-  const [journalEntries, setJournalEntries] = useState([]);
+  const [journalEntries, setJournalEntries] = useState([{
+    text : "Today I started my hackathon.",
+    date : "2022-3-18"
+  }, {
+    text : "I had a bad day today.",
+    date : "2022-3-17"
+  },{
+    text : "I got a bad mark in chemistry and I'm sad",
+    date : "2022-3-16"
+  }]);
   const [selectedDate, setSelectedDate] = useState(todayDateStr);
   const [displayJournalIndex, setDisplayJournalIndex] = useState(null);
   const [warningText, setWarningText] = useState(false);
@@ -41,38 +50,41 @@ const StressJournal = ()=> {
 
   return (
     <div className="journal-page">
-      <div className="review">
+      <div className="journal-page-content">
+        <div className="review">
+            {journalEntries.map((journalEntry, index)=>{
+            return (
+              <div className="review-content">
+                {index === displayJournalIndex? 
+                <div>
+                  <span>{journalEntry.date}</span> 
+                  <p>{journalEntry.text}</p> 
+                </div>
+                : null}
+              </div>
+            )
+          })}
+           <button onClick={handleOnDeleteClick}>delete</button>
+        </div>
+        <div className="left-journal-section">
+          <div className="journal-entries-container">
           {journalEntries.map((journalEntry, index)=>{
           return (
-            <div>
-              {index === displayJournalIndex? 
-              <div>
-                <span>{journalEntry.text}</span> 
-                <span>{journalEntry.date}</span> 
-              </div>
-              : null}
-            </div>
+            <button key={index} id={index} onClick={()=>setDisplayJournalIndex(index)}>{journalEntry.date}</button>
           )
-        })}
-         <button onClick={handleOnDeleteClick}>delete</button>
-      </div>
-      <div className="left-journal-section">
-        <div className="journal-entries-container">
-        {journalEntries.map((journalEntry, index)=>{
-        return (
-          <button key={index} id={index} onClick={()=>setDisplayJournalIndex(index)}>{journalEntry.date}</button>
-        )
-        })}
-        </div>
-        <div className="input-container">
-          <textarea rows="4" cols="50" onChange={handleOnTextChange} value={text}></textarea>
-          <input type="date" onChange={handleOnDateChange}
-           value={selectedDate}
-           min="2022-3-10" max={todayDateStr} defaultValue={todayDateStr}/>
-          <button onClick={handleOnClick}>butttttttonnn</button>
+          })}
+          </div>
+          <div className="input-container">
+            <div className="journal" contentEditable="true" onChange={handleOnTextChange} value={text}><ul><li /></ul></div>
+            <div className="input-date-btn-container">
+              <input type="date" onChange={handleOnDateChange}
+             value={selectedDate}
+             min="2022-3-10" max={todayDateStr} defaultValue={todayDateStr}/>
+              <button onClick={handleOnClick}>butttttttonnn</button>
+            </div>
+          </div>
         </div>
       </div>
-      
     </div>
   )
 }
