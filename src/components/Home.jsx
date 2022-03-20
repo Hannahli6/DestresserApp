@@ -15,7 +15,7 @@ function Home({setShowJournalPage, setShowStretchesPage, setHomePage}) {
     setHomePage(false);
   }
 
-  return (
+ return (
     <main>
       <div className="home-page">
         <h1 className= "wName">YESHAHAH</h1>
@@ -26,6 +26,7 @@ function Home({setShowJournalPage, setShowStretchesPage, setHomePage}) {
       </div>
     </main>
   );
-}
-
+  
+};
 export default Home;
+

@@ -36,7 +36,7 @@ const StretchesPage = ()=> {
             </div>
             <div id="start-clear-container">
 
-              <button id="start-button" onClick={()=>setStartTimer(true)}>start</button>
+              <button id="start-button" onClick={()=>{handleOnStartTime(true); console.log('starttimer')}}>start</button>
               <input class="input-box" placeholder="time" type="number" min="1" max="200" onChange=  {handleOnTimeChange} value={time}></input>
               <button id="clear-button" onClick={()=>{setTime(0);}}>clear</button>
               
@@ -54,7 +54,7 @@ const StretchesPage = ()=> {
   
         <div id="mySidenav" className="sidenav" style={{width: isNavOpen? "750px": "0"}}>
           
-          <a href="javascript:void(0)" className="closebtn" onClick={()=>{setIsNavOpen(false)}}
+          <a href="#" className="closebtn" onClick={()=>{setIsNavOpen(false)}}
             >&times;</a>
 
           <div id="sidenav-container">
