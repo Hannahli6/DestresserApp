@@ -13,10 +13,10 @@ const STRETCHES = [
 
 const renderer = ({ hours, minutes, seconds, completed }) => {
   if (completed) {
-    return <span class="time-number">00:00:00</span>;
+    return <span className="time-number">00:00:00</span>;
   } else {
     return (
-      <span class="time-number">
+      <span className="time-number">
          {zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
       </span>
     );
@@ -44,7 +44,9 @@ const StretchesPage = ({setHomePage,setShowStretchesPage, setShowJournalPage})=>
 
  
   const playAudio = (url) => {
-    new Audio.play(url);
+    console.log(url)
+    new Audio(url).play();
+
   }
 
   const handleOnTimeChange = (e)=>{

@@ -30,7 +30,16 @@ border-radius:10px;
   align-items: center;
   justify-content: center;
   height:100vh;
-  background: #FAB7A7;
+  background: #7c73af;
+  background-image: url(/src/components/imgs/stretches-page-bg.svg);
+  background-size: cover;
+}
+
+.journal-page h1{
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  top: 5vh;
 }
 
 #home-button{
@@ -51,17 +60,29 @@ border-radius:10px;
 .review{
   height:70%;
   width: 37%;
-  background: white;
+  background: #e6d0e8;
   margin:30px;
-  border-radius:10px;
+  border-radius:20px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+
   position:relative;
   max-width: 400px;
+    padding-top: 40px; 
+}
+.review-content{
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+.review-content span{
+    display:block;
+    width:100%;
+    word-wrap:break-word;
 }
 .review button{
+  font-size: 40px;
   position:absolute;
   bottom:40px;
   right:40px;
@@ -83,7 +104,7 @@ border-radius:10px;
   width:100%;
   background: white;
   overflow-y: auto;
-  border-radius:10px;
+  border-radius:20px;
   background:none;
 }
 
@@ -93,23 +114,29 @@ border-radius:10px;
   margin-top:15px;
   width: 100%;
   height: 100%; 
-  border-radius:10px;
-  color:434547;
-}
-
-.input-container textarea{
-  padding-left:160px;
-  resize: none;
-  height: 100%; 
-  width: 100%;
-  padding-left:40px;
-  padding-top:40px;
-  background: #ffffff;
+  border-radius:20px;
   color:#434547;
 }
 
+.input-container textarea{
+  resize: none;
+  height: 100%; 
+  width: 100%;
+: 40px;  
+  border-radius: 20px;
+  padding:40px;
+  background: #e6d0e8;
+  color:#434547;
+}
+
+.input-container button{
+  font-size: 20px;
+  color: white;
+}
+
 .input-date-btn-container{
-  
+  margin-top: 15px;
+
 }
 
 .journal-entries-container button{
@@ -117,7 +144,7 @@ border-radius:10px;
   margin-bottom:15px;
   width:100%;
   height:20px;
-  border-radius: 10px;
+  border-radius: 20px;
   background:#fff0df;
 }
 

@@ -20,7 +20,10 @@ function App() {
           setShowStretchesPage={setShowStretchesPage}
           setHomePage = {setHomePage}
           /> : null}
-        {showJournalPage? <StressJournal /> : null}
+        {showJournalPage? <StressJournal 
+          setShowJournalPage= {setShowJournalPage} 
+          setShowStretchesPage={setShowStretchesPage}
+          setHomePage = {setHomePage}/> : null}
         {showStretchesPage? <StretchesPage 
           setShowJournalPage= {setShowJournalPage} 
           setShowStretchesPage={setShowStretchesPage}
