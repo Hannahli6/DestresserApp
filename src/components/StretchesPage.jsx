@@ -3,8 +3,13 @@ import Countdown, {zeroPad} from 'react-countdown';
 import '../stretchesPage.css';
 
 const STRETCHES = [
-  { name: "neck", img: "https://media1.popsugar-assets.com/files/thumbor/33LdRo69wFepJz0QOAvD8kIfWa0/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2013/08/20/763/n/1922729/26b27f299bae8fb2_basic/i/Seated-Neck-Release.jpg"}, 
-  { name: "body", img: "https://media.self.com/photos/58e65afe71db2552a4548468/master/pass/lauren-porat-yogaspark-knee-hold-pose.jpg"}]
+  { name: "High Knee Stretch", img: "/src/components/imgs/stretch-gifs/stretch1.gif"}, 
+  { name: "Overhead Stretch", img: "/src/components/imgs/stretch-gifs/stretch2.gif"},
+  { name: "Triceps Stretch", img: "/src/components/imgs/stretch-gifs/stretch3.gif"},
+  { name: "Head Tilts", img: "/src/components/imgs/stretch-gifs/stretch4.gif"},
+  { name: "Lunges", img: "/src/components/imgs/stretch-gifs/stretch5.gif"},
+  { name: "Quad Stretch", img: "/src/components/imgs/stretch-gifs/stretch6.gif"},
+]
 
 const renderer = ({ hours, minutes, seconds, completed }) => {
   if (completed) {
@@ -81,12 +86,12 @@ const StretchesPage = ()=> {
             
             <div className="main-stretch">
               <div className="main-stretch-circle"><img src={currentStretch.img} width="100%"/></div>
-              <h3>{currentStretch.name} stretches</h3>
+              <h3>{currentStretch.name}</h3>
             </div>
             
             <div className="stretch-buttons">
               {STRETCHES.map(({ name, img }, index) => 
-                <button onClick={() => setStretchIndex(index)}><img src={img} width="100%"/><span>{name}</span></button>)}
+                <button onClick={() => setStretchIndex(index)}><img src={img} width="100%"/></button>)}
             </div>
 
           </div>
